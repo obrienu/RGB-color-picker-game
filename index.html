@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="./bower_components/bootstrap/dist/css/bootstrap.css"
+    />
+    <link rel="stylesheet" href="./assets/main.css" />
+    <title>Color Picker</title>
+  </head>
+  <body>
+    <header class="head">
+      <h1 class="heading" id="blinker">My Color Picker Game</h1>
+      <h3 class="determine-color">
+        Determine Color ( <span id="display-color"></span>)
+      </h3>
+    </header>
+    <main>
+      <div class="controls">
+        <button class="btn btn-primary" id="hard">Hard</button>
+        <botton class="btn btn-success" id="medium">Medium</botton>
+        <button class="btn btn-danger" id="easy">Easy</button>
+        <button class="btn btn-warning" id="start">Start</button>
+      </div>
+      <div class="container color-tiles">
+        <div class="columns"></div>
+        <div class="columns"></div>
+        <div class="columns"></div>
+
+        <div class="columns"></div>
+        <div class="columns"></div>
+        <div class="columns"></div>
+
+        <div class="columns"></div>
+        <div class="columns"></div>
+        <div class="columns"></div>
+      </div>
+    </main>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="./assets/main.js"></script>
+  </body>
+</html>
