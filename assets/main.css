@@ -1,0 +1,48 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+header.head {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+div.controls {
+  width: 100%;
+  margin: 0 auto 5px;
+  text-align: center;
+  background: rgb(56, 50, 50);
+}
+
+.btn {
+  margin: 5px 10px;
+}
+
+.color-tiles {
+  display: grid;
+  grid-template-columns: 20% 20% 20%;
+  grid-template-rows: 120px 120px 120px;
+  grid-gap: 10px;
+  justify-content: space-around;
+}
+
+.columns {
+  border-radius: 5%;
+  cursor: pointer;
+}
+
+.transit {
+  transition: background linear 500ms;
+  cursor: inherit;
+}
+
+.hide {
+  visibility: hidden;
+}
+
+.blink {
+  color: aqua;
+}
