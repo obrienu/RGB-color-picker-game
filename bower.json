@@ -1,0 +1,13 @@
+{
+  "name": "color_picker",
+  "authors": ["obrienu <obrienules@gmail.com>"],
+  "description": "A color picker game",
+  "main": "index.html",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": ["**/.*", "node_modules", "bower_components", "test", "tests"],
+  "dependencies": {
+    "bootstrap": "^4.3.1"
+  }
+}
