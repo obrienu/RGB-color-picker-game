@@ -39,10 +39,14 @@ div.controls {
   cursor: inherit;
 }
 
-.hide {
+.invisible {
   visibility: hidden;
 }
 
 .blink {
   color: aqua;
+}
+
+.hide {
+  display: none;
 }

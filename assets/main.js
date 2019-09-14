@@ -3,9 +3,8 @@ const grids = document.querySelectorAll('.columns');
 const displayColor = document.querySelector('#display-color');
 const head = document.querySelector('.head');
 const start = document.querySelector('#start');
-const blinker = document.querySelector('#blinker');
+const determineColor = document.querySelector('.determine-color');
 let pickedColor = '';
-let counter = 1;
 
 //function generates random numbers from 1 to a
 const randomNumber = num => {
@@ -21,16 +20,14 @@ const generateRandomColor = num => {
 
 // loop through each grid and assign random color to each
 const restart = () => {
-  counter = 0;
   /*  blinker.classList.remove('blink');
   displayColor.classList.remove('blink'); */
   head.style.background = 'white';
   grids.forEach(grid => {
     grid.classList.remove('transit');
-    grid.classList.remove('hide');
+    grid.classList.remove('invisible');
     grid.style.background = generateRandomColor(255);
   });
-  return counter;
 };
 
 //******************************************************************************** */
@@ -51,27 +48,22 @@ const setColor = () => {
 //listens for grid selection and checks if slected grid color is same as the color to be determined
 const checkValidity = (color, grid) => {
   if (color === pickedColor) {
-    /* setInterval(() => {
-      blinker.classList.toggle('blink');
-      displayColor.classList.toggle('blink');
-    }, 500); */
     grids.forEach(grid => {
-      grid.classList.remove('hide');
+      grid.classList.remove('invisible');
       grid.style.background = pickedColor;
-      head.style.background = pickedColor;
       grid.classList.add('transit');
-      head.classList.add('transit');
     });
-    displayColor.textContent = `You Won After ${counter} Attempts`;
+    head.style.background = pickedColor;
+
+    head.classList.add('transit');
+    determineColor.style.display = 'block';
   } else {
     grid.style.background = 'white';
     grid.style.transition = 'background linear 300ms';
     setTimeout(() => {
-      grid.classList.add('hide');
+      grid.classList.add('invisible');
     }, 300);
   }
-  counter++;
-  return counter;
 };
 
 const uiInteract = () => {
@@ -88,7 +80,12 @@ const startApp = () => {
   restart();
   setColor();
   uiInteract();
-  return (counter = 0);
+  determineColor.style.display = 'none';
 };
 
 start.addEventListener('click', startApp);
+
+/* ************************************utility*************************** */
+setInterval(() => {
+  determineColor.classList.toggle('blink');
+}, 500);
