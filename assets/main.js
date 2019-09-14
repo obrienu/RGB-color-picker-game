@@ -22,8 +22,8 @@ const generateRandomColor = num => {
 // loop through each grid and assign random color to each
 const restart = () => {
   counter = 0;
-  blinker.classList.remove('blink');
-  displayColor.classList.remove('blink');
+  /*  blinker.classList.remove('blink');
+  displayColor.classList.remove('blink'); */
   head.style.background = 'white';
   grids.forEach(grid => {
     grid.classList.remove('transit');
@@ -51,10 +51,10 @@ const setColor = () => {
 //listens for grid selection and checks if slected grid color is same as the color to be determined
 const checkValidity = (color, grid) => {
   if (color === pickedColor) {
-    setInterval(() => {
+    /* setInterval(() => {
       blinker.classList.toggle('blink');
       displayColor.classList.toggle('blink');
-    }, 500);
+    }, 500); */
     grids.forEach(grid => {
       grid.classList.remove('hide');
       grid.style.background = pickedColor;
